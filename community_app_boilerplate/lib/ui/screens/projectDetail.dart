@@ -144,79 +144,82 @@ class _ProjectDetailsState extends State<ProjectDetails> {
                 padding: const EdgeInsets.only(top:10.0,left:18.0,right: 18.0),
                 child: Column(
                   children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.only(left:4.0,right: 4.0),
-                          child: Chip(
-                            elevation: 4.0,
-                            backgroundColor: Colors.white,
-                            avatar: CircleAvatar(
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(left:2.0,right: 2.0),
+                            child: Chip(
+                              elevation: 4.0,
                               backgroundColor: Colors.white,
-                              child: Image.asset('assets/icons/tech/flutter.png'),
-                            ),
-                            label: Padding(
-                              padding: const EdgeInsets.all(4.0),
-                              child: Text(
-                                "Flutter",
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  color: Colors.blueAccent
+                              avatar: CircleAvatar(
+                                backgroundColor: Colors.white,
+                                child: Image.asset('assets/icons/tech/flutter.png'),
+                              ),
+                              label: Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: Text(
+                                  "Flutter",
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    color: Colors.blueAccent
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left:4.0,right: 4.0),
-                          child: Chip(
-                            elevation: 4.0,
-                            backgroundColor: Colors.white,
-                            avatar: CircleAvatar(
+                          Padding(
+                            padding: const EdgeInsets.only(left:2.0,right: 2.0),
+                            child: Chip(
+                              elevation: 4.0,
                               backgroundColor: Colors.white,
-                              child: Image.asset('assets/icons/tech/android.png'),
-                            ),
-                            label: Padding(
-                              padding: const EdgeInsets.all(4.0),
-                              child: Text(
-                                "Android",
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  color: Colors.green,
-                                ),
+                              avatar: CircleAvatar(
+                                backgroundColor: Colors.white,
+                                child: Image.asset('assets/icons/tech/android.png'),
                               ),
-                            )
+                              label: Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: Text(
+                                  "Android",
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    color: Colors.green,
+                                  ),
+                                ),
+                              )
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left:4.0,right: 4.0),
-                          child: Chip(
-                            elevation: 4.0,
-                            backgroundColor: Colors.white,
-                            avatar: CircleAvatar(
+                          Padding(
+                            padding: const EdgeInsets.only(left:2.0,right: 2.0),
+                            child: Chip(
+                              elevation: 4.0,
                               backgroundColor: Colors.white,
-                              child: Image.asset('assets/icons/tech/java.png'),
-                            ),
-                            label: Padding(
-                              padding: const EdgeInsets.all(4.0),
-                              child: Text(
-                                "Java",
-                                style: TextStyle(
-                                  fontSize: 18.0,
-                                  color: Colors.red,
-                                ),
+                              avatar: CircleAvatar(
+                                backgroundColor: Colors.white,
+                                child: Image.asset('assets/icons/tech/java.png'),
                               ),
-                            )
+                              label: Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: Text(
+                                  "Java",
+                                  style: TextStyle(
+                                    fontSize: 18.0,
+                                    color: Colors.red,
+                                  ),
+                                ),
+                              )
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         Padding(
-                          padding: const EdgeInsets.only(left:4.0,right: 4.0),
+                          padding: const EdgeInsets.only(left:2.0,right: 2.0),
                           child: Chip(
                             elevation: 4.0,
                             backgroundColor: Colors.white,
@@ -237,7 +240,7 @@ class _ProjectDetailsState extends State<ProjectDetails> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left:4.0,right: 4.0),
+                          padding: const EdgeInsets.only(left:2.0,right: 2.0),
                           child: Chip(
                             elevation: 4.0,
                             backgroundColor: Colors.white,

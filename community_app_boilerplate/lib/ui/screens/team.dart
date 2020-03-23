@@ -142,7 +142,6 @@ class TeamBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        height: MediaQuery.of(context).size.height,
         child: new Column(
           children: <Widget>[
             new Row(
