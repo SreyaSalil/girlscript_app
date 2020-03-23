@@ -77,71 +77,74 @@ class _ProfileState extends State<Profile> {
                       ],
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Container(
-                            width: 65.0,
-                            height: 30.0,
-                            child: RaisedButton(
-                              color: Colors.blueAccent,
-                              onPressed: (){},
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16.0)
+                  Container(
+                    width: MediaQuery.of(context).size.width*0.95,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            Container(
+                              width: 65.0,
+                              height: 30.0,
+                              child: RaisedButton(
+                                color: Colors.blueAccent,
+                                onPressed: (){},
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.0)
+                                ),
+                                child: Text(
+                                  "code",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ),
+                            ),
+                            SizedBox(width: 10.0,),
+                            Container(
+                              width: 66.0,
+                              height: 30.0,
+                              child: RaisedButton(
+                                color: Colors.blueAccent,
+                                onPressed: (){},
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.0)
+                                ),
+                                child: Text(
+                                  "life",
+                                  style: TextStyle(
+                                    color: Colors.white
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        Container(
+                          width: 130.0,
+                          height: 30.0,
+                          child: RaisedButton(
+                            color: Colors.amber[800],
+                            onPressed: (){},
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16.0)
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(left:10.0,right: 10.0),
                               child: Text(
-                                "code",
+                                "Register",
                                 style: TextStyle(
                                   color: Colors.white,
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.w600
                                 ),
                               ),
                             ),
                           ),
-                          SizedBox(width: 10.0,),
-                          Container(
-                            width: 66.0,
-                            height: 30.0,
-                            child: RaisedButton(
-                              color: Colors.blueAccent,
-                              onPressed: (){},
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16.0)
-                              ),
-                              child: Text(
-                                "life",
-                                style: TextStyle(
-                                  color: Colors.white
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                      Container(
-                        width: 138.0,
-                        height: 30.0,
-                        child: RaisedButton(
-                          color: Colors.amber[800],
-                          onPressed: (){},
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0)
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(left:10.0,right: 10.0),
-                            child: Text(
-                              "Register",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15.0,
-                                fontWeight: FontWeight.w600
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
+                        )
+                      ],
+                    ),
                   )
                 ],
               ),
