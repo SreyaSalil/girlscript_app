@@ -1,6 +1,9 @@
 import 'package:communityappboilerplate/ui/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:communityappboilerplate/services/signUp.dart';
+import 'dart:async';
+import 'package:uni_links/uni_links.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -23,6 +26,70 @@ class _SignUpScreenState extends State<SignUpScreen> {
   String _userName, _email, _password;
   bool _termsCond = false;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  StreamSubscription _subs;
+
+  @override
+  void initState() {
+    _initDeepLinkListener();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _disposeDeepLinkListener();
+    super.dispose();
+  }
+
+
+  void _initDeepLinkListener() async {
+    _subs = getLinksStream().listen((String link) {
+      _checkDeepLink(link);
+    }, cancelOnError: true);
+  }
+
+  void _checkDeepLink(String link) {
+    if (link != null) {
+      String code = link.substring(link.indexOf(RegExp('code=')) + 5);
+      loginWithGitHub(code)
+        .then((firebaseUser) {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return Dashboard(name,imageUrl);
+              },
+            ),
+          );
+          print("LOGGED IN AS: " + firebaseUser.displayName);
+        }).catchError((e) {
+          print("LOGIN ERROR: " + e.toString());
+        });
+    }
+  }
+
+  void _disposeDeepLinkListener() {
+    if (_subs != null) {
+      _subs.cancel();
+      _subs = null;
+    }
+  }
+
+  void onClickGitHubLoginButton() async {
+    const String url = "https://github.com/login/oauth/authorize" +
+        "?client_id=" + "841cad1c253905cedb95" +
+        "&scope=public_repo%20read:user%20user:email";
+
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceSafariVC: false,
+        forceWebView: false,
+      );
+
+    } else {
+      print("CANNOT LAUNCH THIS URL!");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -285,7 +352,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         elevation: 6,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5)),
-                        onPressed: () {},
+                        onPressed: () {
+                          onClickGitHubLoginButton();
+                        },
                         color: Colors.black,
                         padding: EdgeInsets.all(9),
                         child: Row(
