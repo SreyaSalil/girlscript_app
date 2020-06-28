@@ -2,7 +2,7 @@ import 'package:communityappboilerplate/services/auth.dart';
 import 'package:communityappboilerplate/services/user.dart';
 import 'package:communityappboilerplate/ui/dashboard.dart';
 import 'package:communityappboilerplate/ui/screens/home.dart';
-import 'package:communityappboilerplate/ui/screens/signUpScreen.dart';
+import 'package:communityappboilerplate/ui/screens/auth/signUpScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
